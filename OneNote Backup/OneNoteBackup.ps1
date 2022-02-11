@@ -30,7 +30,7 @@ ForEach($Notebook in ($Xml.Notebooks.Notebook)) {
     }
 }
 
-$FolderCount = (Get-ChildItem -Path $BasePath).count
+$FolderCount = (Get-ChildItem -Path $BasePath | Measure-Object).count
 
 if ($FolderCount -gt 30)
 {
